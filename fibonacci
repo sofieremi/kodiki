@@ -1,0 +1,13 @@
+def fib(n, L):
+    count = len(L)
+    if len(L) < 2:
+        return[]
+    num1 = L[count-2]
+    num2 = L[count-1]
+    if (num1 + num2) < n:
+        L = L + [num1 + num2]
+        return fib(n, L)
+    else:
+        return L
+LL = fib(100, [0, 1])
+print('LL =', LL)
