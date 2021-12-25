@@ -1,0 +1,17 @@
+glossary = {}
+while True:
+    ch_word = input('enter chinese word')
+    if ch_word == 'stop':
+        break
+    else:
+        ru_word = input('enter russian word')
+        glossary[ch_word] = ru_word
+print(glossary)
+sentence = input('enter a sentence ->')
+a = sentence.split(',')
+for k in glossary.keys():
+    print(k)
+    for i in a:
+        print(i)
+        if i == k:
+            print(glossary[k])
