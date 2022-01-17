@@ -1,0 +1,37 @@
+# answer = 0 (количество защитников)
+# m, n = input().split()
+# print(m, n)
+# m = int(m)
+# n = int(n)
+# blocks = input().split()
+# for i in range(len(blocks)):
+#     blocks[i] = int(blocks[i])
+# print(blocks)
+# shoulders = input().split()
+# for i in range(len(shoulders)):
+#     shoulders[i] = int(shoulders[i])
+# print(shoulders)
+# q = 2
+# w = переменная в которой сохранится наибольшее значение в диапозоне от 2 (и тд) до 0 элемента
+# с каждой итерацией должна обновляться
+# далее сравнивается с итеррируемым элементом
+# for a[q] in blocks:
+#      for j in range (a[q - 1], a[0]):
+# ^ тут я пытаюсь пройтись по длине диапозона и найти максимальную длину(не знаю, как)
+#            if a[q] > max(диапоона):
+#                  s = a[q] - max(диапоона)
+#                  b.append(s)
+#            if a[q] < max(диапоона):
+#                  q += 1 - переход к следующему итеррируемому объекту
+# shoulders.sort(reverse = True)
+# b.sort(reverse = True)
+# for i in shoulders:
+# counter = 0
+# if shoulders[i] <= b[i]:
+#     shoulders.pop(shoulders[i])
+#     b.pop(b[i])
+# answer += 1
+# if shoulders[i] > b[i]:
+#     shoulders.pop(shoulders[i])
+#     + переход к следующему элементу
+# print(answer)
