@@ -1,37 +1,44 @@
-# answer = 0 (количество защитников)
-# m, n = input().split()
-# print(m, n)
-# m = int(m)
-# n = int(n)
-# blocks = input().split()
-# for i in range(len(blocks)):
-#     blocks[i] = int(blocks[i])
-# print(blocks)
-# shoulders = input().split()
-# for i in range(len(shoulders)):
-#     shoulders[i] = int(shoulders[i])
-# print(shoulders)
-# q = 2
-# w = переменная в которой сохранится наибольшее значение в диапозоне от 2 (и тд) до 0 элемента
-# с каждой итерацией должна обновляться
-# далее сравнивается с итеррируемым элементом
-# for a[q] in blocks:
-#      for j in range (a[q - 1], a[0]):
-# ^ тут я пытаюсь пройтись по длине диапозона и найти максимальную длину(не знаю, как)
-#            if a[q] > max(диапоона):
-#                  s = a[q] - max(диапоона)
-#                  b.append(s)
-#            if a[q] < max(диапоона):
-#                  q += 1 - переход к следующему итеррируемому объекту
-# shoulders.sort(reverse = True)
-# b.sort(reverse = True)
-# for i in shoulders:
-# counter = 0
-# if shoulders[i] <= b[i]:
-#     shoulders.pop(shoulders[i])
-#     b.pop(b[i])
-# answer += 1
-# if shoulders[i] > b[i]:
-#     shoulders.pop(shoulders[i])
-#     + переход к следующему элементу
-# print(answer)
+answer = 0
+m, n = input().split()
+print(m, n)
+m = int(m)
+n = int(n)
+blocks = input().split()
+for i in range(len(blocks)):
+    blocks[i] = int(blocks[i])
+print(blocks)
+shoulders = input().split()
+for i in range(len(shoulders)):
+    shoulders[i] = int(shoulders[i])
+print(shoulders)
+blocks = [1, 2, 3]
+memory = []
+start = 1
+place = []
+for i in range(len(blocks) - 1):
+    if i < start:
+        memory.append(blocks[i])
+        start += 1
+        max_blocks = max(memory)
+        r = blocks[i] - max_blocks
+        if r < 0:
+            continue
+        if r > 0:
+            place.append(r)
+        for j in range(len(place)):
+            place[j] = int(place[j])
+        print(place)
+shoulders.sort(reverse=True)
+place.sort(reverse=True)
+for i in range(len(shoulders)):
+    for j in range(len(place)):
+        counter = 0
+        if shoulders[i] <= place[j]:
+            shoulders.pop(shoulders[i])
+            place.pop(place[i])
+            answer += 1
+        if shoulders[i] > place[j]:
+            shoulders.pop(shoulders[i])
+            continue
+print(answer)
+
