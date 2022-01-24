@@ -1,0 +1,15 @@
+f = open('input.txt')
+a = []
+for i in f:
+    a.append(i[:-1])
+ans = ''
+anscnt = 0
+for i in set(a):
+    icnt = 0
+    for j in range(len(a)):
+        if i == a[j]:
+            icnt += 1
+    if icnt > anscnt:
+        ans = i
+        anscnt = icnt
+print(ans, anscnt)
