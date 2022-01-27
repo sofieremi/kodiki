@@ -1,0 +1,9 @@
+a = input('enter some numbers').split()
+for i in range(len(a)):
+    a[i] = int(a[i])
+target = int(input('enter a target number'))
+b = 0
+for i in range(len(a)):
+    b = target - a[i]
+    if b in a:
+        print(a.index(a[i]), a.index(b))
